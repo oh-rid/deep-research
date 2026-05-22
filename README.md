@@ -163,6 +163,26 @@ The researcher runs through five phases per request:
   want a janitor cron to clean `$TMPDIR/gemini_research_*.txt` and
   `$TMPDIR/gpt_research_*.txt`.
 
+## Research basis
+
+The plugin's defenses are not invented — each is anchored in published
+literature on LLM failure modes. Inline references appear in
+`agents/researcher.md` next to the rule they motivate; this table
+collects them for external readers.
+
+| Defense | Informed by |
+| --- | --- |
+| 3 different LLM families (not 3 prompts to the same model) | **Shared Imagination** — LLM agreement without evidence is a weaker signal than minority dissent with evidence ([arXiv:2407.16604](https://arxiv.org/abs/2407.16604), July 2024) |
+| Verify with **fresh** WebSearch (Rule A — never re-examine pages from your own draft) | **Chain-of-Verification (CoVe)** — verification questions must be answered in isolation from the draft they verify ([Dhuliawala et al., ACL 2024, arXiv:2309.11495](https://arxiv.org/abs/2309.11495)) |
+| Mechanical URL + passage verification (Rule C) | **Fabricated-citations study (NeurIPS 2025)** — 100 fake citations identified in 53 accepted papers despite 3–5 expert reviewers each; humans cannot catch this class reliably, only mechanical checks do ([arXiv:2602.05930](https://arxiv.org/abs/2602.05930)) |
+| Evidence weight > vote count (Rule D) | Single-source-with-evidence beats majority-consensus-without ([Till et al., arXiv:2510.19507](https://arxiv.org/abs/2510.19507), October 2025; also Shared Imagination, above) |
+| Empirical CLI / API verification (Rule B) | Practitioner observation, not paper-derived — LLMs confabulate flags from convention priors (e.g. adding `--model` to a CLI that has no such flag). Must be verified against `<cmd> --help` or vendor docs |
+
+All arXiv URLs verified to resolve 2xx at plugin v0.2.0 release. Passage
+matches (the second half of Rule C — confirm the quoted claim actually
+appears in the fetched text) are the reader's responsibility for
+high-stakes use — claims above are summary glosses, not verbatim quotes.
+
 ## Status
 
 - v0.2.0 — production-ready as of 2026-05-22, verified end-to-end with all
