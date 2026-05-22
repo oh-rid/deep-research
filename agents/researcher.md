@@ -17,7 +17,7 @@ description: |
 
   <example>
   Context: User wants to understand a market event
-  user: "заресёрчь что происходит с тарифами на китай"
+  user: "research what's happening with tariffs on China"
   assistant: "Launching the research agent to investigate China tariffs from multiple sources."
   <commentary>
   Multi-source web research requiring synthesis from news, analysis, and data.
