@@ -1,0 +1,8 @@
+{
+  "name": "deep-research",
+  "version": "0.2.0",
+  "description": "Deep research with 3-way LLM triangulation (Claude + Gemini via agy CLI + GPT-5 via codex CLI). Worktree-isolated, primary-source verified (mechanical URL check + passage match), defends against shared-corpus consensus hallucination.",
+  "author": {
+    "name": "probro"
+  }
+}
