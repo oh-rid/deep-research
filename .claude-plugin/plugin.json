@@ -4,5 +4,21 @@
   "description": "Deep research with 3-way LLM triangulation (Claude + Gemini via agy CLI + GPT-5 via codex CLI). Worktree-isolated, primary-source verified (mechanical URL check + passage match), defends against shared-corpus consensus hallucination.",
   "author": {
     "name": "oh-rid"
-  }
+  },
+  "homepage": "https://github.com/oh-rid/deep-research",
+  "repository": "https://github.com/oh-rid/deep-research",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "claude-code-plugin",
+    "deep-research",
+    "research-agent",
+    "llm-triangulation",
+    "cross-checker",
+    "gemini",
+    "gpt-5",
+    "primary-source-verification",
+    "consensus-hallucination",
+    "prompt-injection-defense"
+  ]
 }
